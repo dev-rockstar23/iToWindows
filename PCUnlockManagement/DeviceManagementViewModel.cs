@@ -191,9 +191,15 @@ public sealed class DeviceManagementViewModel : INotifyPropertyChanged
             if (respLen == 0 || respLen > 65_536) return null;
 
             byte[] respBuf = new byte[respLen];
-            await pipe.ReadAsync(respBuf);
+            int respTotal = 0;
+            while (respTotal < (int)respLen)
+            {
+                int read = await pipe.ReadAsync(respBuf.AsMemory(respTotal, (int)respLen - respTotal));
+                if (read == 0) break;
+                respTotal += read;
+            }
 
-            return Encoding.UTF8.GetString(respBuf);
+            return Encoding.UTF8.GetString(respBuf, 0, respTotal);
         }
         catch
         {

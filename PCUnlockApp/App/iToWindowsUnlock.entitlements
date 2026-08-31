@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Keychain access for Secure Enclave key storage (Requirement 2.4, 2.5) -->
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)com.dev-rockstar23.itowindows-unlock</string>
+	</array>
+
+	<!-- Face ID / biometric authentication (Requirement 2.1) -->
+	<key>com.apple.developer.devicecheck.appattest-environment</key>
+	<string>development</string>
+
+	<!-- Bluetooth peripheral mode for unlock advertising (Requirement 4.2) -->
+	<key>com.apple.developer.bluetooth.central</key>
+	<true/>
+
+	<!-- Camera access for QR code scanning (Requirement 6.3) -->
+	<key>com.apple.developer.camera.access</key>
+	<true/>
+</dict>
+</plist>

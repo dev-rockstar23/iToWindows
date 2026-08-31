@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B001000100000001 /* iToWindowsUnlockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000100000001 /* iToWindowsUnlockApp.swift */; };
+		B001000200000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000200000002 /* ContentView.swift */; };
+		B001000300000003 /* PairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000300000003 /* PairingView.swift */; };
+		B001000400000004 /* UnlockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000400000004 /* UnlockViewModel.swift */; };
+		B001000500000005 /* FaceIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000500000005 /* FaceIDManager.swift */; };
+		B001000600000006 /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000600000006 /* KeyManager.swift */; };
+		B001000700000007 /* SecureKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000700000007 /* SecureKeyStore.swift */; };
+		B001000800000008 /* ChallengeSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000800000008 /* ChallengeSigner.swift */; };
+		B001000900000009 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001000900000009 /* Challenge.swift */; };
+		B00100010000000A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00100010000000A /* Response.swift */; };
+		B00100010000000B /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00100010000000B /* QRScanner.swift */; };
+		B00100010000000C /* PairingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00100010000000C /* PairingManager.swift */; };
+		B00100010000000D /* PairingPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00100010000000D /* PairingPayload.swift */; };
+		B00100010000000E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00100010000000E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A001000100000001 /* iToWindowsUnlockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iToWindowsUnlockApp.swift; sourceTree = "<group>"; };
+		A001000200000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A001000300000003 /* PairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingView.swift; sourceTree = "<group>"; };
+		A001000400000004 /* UnlockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewModel.swift; sourceTree = "<group>"; };
+		A001000500000005 /* FaceIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDManager.swift; sourceTree = "<group>"; };
+		A001000600000006 /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
+		A001000700000007 /* SecureKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureKeyStore.swift; sourceTree = "<group>"; };
+		A001000800000008 /* ChallengeSigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeSigner.swift; sourceTree = "<group>"; };
+		A001000900000009 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		A00100010000000A /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		A00100010000000B /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
+		A00100010000000C /* PairingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingManager.swift; sourceTree = "<group>"; };
+		A00100010000000D /* PairingPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingPayload.swift; sourceTree = "<group>"; };
+		A00100010000000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A00100010000000F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A000000000000001 /* iToWindowsUnlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iToWindowsUnlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A000000000000002 /* iToWindowsUnlock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iToWindowsUnlock.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D000000000000000 /* root */ = {
+			isa = PBXGroup;
+			children = (
+				D000000000000001 /* iToWindowsUnlock */,
+				D000000000000002 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D000000000000001 /* iToWindowsUnlock */ = {
+			isa = PBXGroup;
+			children = (
+				D000000000000010 /* App */,
+				D000000000000020 /* Authentication */,
+				D000000000000030 /* Pairing */,
+				A000000000000002 /* iToWindowsUnlock.entitlements */,
+			);
+			path = iToWindowsUnlock;
+			sourceTree = "<group>";
+		};
+		D000000000000010 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A001000100000001 /* iToWindowsUnlockApp.swift */,
+				A001000200000002 /* ContentView.swift */,
+				A001000300000003 /* PairingView.swift */,
+				A001000400000004 /* UnlockViewModel.swift */,
+				A00100010000000E /* Assets.xcassets */,
+				A00100010000000F /* Info.plist */,
+			);
+			path = ../App;
+			sourceTree = "<group>";
+		};
+		D000000000000020 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A001000500000005 /* FaceIDManager.swift */,
+				A001000600000006 /* KeyManager.swift */,
+				A001000700000007 /* SecureKeyStore.swift */,
+				A001000800000008 /* ChallengeSigner.swift */,
+				A001000900000009 /* Challenge.swift */,
+				A00100010000000A /* Response.swift */,
+			);
+			path = ../Sources/Authentication;
+			sourceTree = "<group>";
+		};
+		D000000000000030 /* Pairing */ = {
+			isa = PBXGroup;
+			children = (
+				A00100010000000B /* QRScanner.swift */,
+				A00100010000000C /* PairingManager.swift */,
+				A00100010000000D /* PairingPayload.swift */,
+			);
+			path = ../Sources/Pairing;
+			sourceTree = "<group>";
+		};
+		D000000000000002 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A000000000000001 /* iToWindowsUnlock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E000000000000001 /* iToWindowsUnlock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F000000000000002 /* Build configuration list for PBXNativeTarget "iToWindowsUnlock" */;
+			buildPhases = (
+				C000000000000002 /* Sources */,
+				C000000000000001 /* Frameworks */,
+				C000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iToWindowsUnlock;
+			productName = iToWindowsUnlock;
+			productReference = A000000000000001 /* iToWindowsUnlock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = "dev-rockstar23";
+				TargetAttributes = {
+					E000000000000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = F000000000000001 /* Build configuration list for PBXProject "iToWindowsUnlock" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D000000000000000;
+			productRefGroup = D000000000000002 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E000000000000001 /* iToWindowsUnlock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00100010000000E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B001000100000001 /* iToWindowsUnlockApp.swift in Sources */,
+				B001000200000002 /* ContentView.swift in Sources */,
+				B001000300000003 /* PairingView.swift in Sources */,
+				B001000400000004 /* UnlockViewModel.swift in Sources */,
+				B001000500000005 /* FaceIDManager.swift in Sources */,
+				B001000600000006 /* KeyManager.swift in Sources */,
+				B001000700000007 /* SecureKeyStore.swift in Sources */,
+				B001000800000008 /* ChallengeSigner.swift in Sources */,
+				B001000900000009 /* Challenge.swift in Sources */,
+				B00100010000000A /* Response.swift in Sources */,
+				B00100010000000B /* QRScanner.swift in Sources */,
+				B00100010000000C /* PairingManager.swift in Sources */,
+				B00100010000000D /* PairingPayload.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "../App/iToWindowsUnlock.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "../App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev-rockstar23.itowindows-unlock;
+				PRODUCT_NAME = "iToWindows Unlock";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = "../App/iToWindowsUnlock.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "../App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dev-rockstar23.itowindows-unlock;
+				PRODUCT_NAME = "iToWindows Unlock";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F000000000000001 /* Build configuration list for PBXProject "iToWindowsUnlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F000000000000005 /* Debug */,
+				F000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F000000000000002 /* Build configuration list for PBXNativeTarget "iToWindowsUnlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F000000000000003 /* Debug */,
+				F000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = E000000000000000 /* Project object */;
+}
