@@ -55,7 +55,7 @@ Your Face ID data and private key **never leave your iPhone's Secure Enclave**. 
 The iPhone app is distributed via **TestFlight** (Apple's beta platform):
 
 1. Install [TestFlight](https://apps.apple.com/app/testflight/id899247664) from the App Store
-2. Open the invite link: *(add your TestFlight public link here after uploading)*
+2. Open the invite link: *(Upcoming Soon, Stay Tuned!)*
 3. Tap **Install** inside TestFlight
 
 → Build & publish guide for developers: [**PCUnlockApp/SETUP.md**](PCUnlockApp/SETUP.md)
