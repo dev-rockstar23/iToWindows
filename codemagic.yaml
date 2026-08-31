@@ -28,6 +28,9 @@ workflows:
       ios_signing:
         distribution_type: development   # works with free Apple ID, no $99 needed
         bundle_identifier: com.dev-rockstar23.itowindows-unlock
+      # ── Add these in Codemagic UI → Environment variables (mark as secret) ──
+      # APPLE_ID          your Apple ID email
+      # APPLE_ID_PASSWORD your Apple ID password (use app-specific password)
       vars:
         XCODE_PROJECT:  "PCUnlockApp/iToWindowsUnlock.xcodeproj"
         XCODE_SCHEME:   "iToWindowsUnlock"
