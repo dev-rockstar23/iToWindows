@@ -1,0 +1,114 @@
+name: Build iOS IPA
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:   # lets you trigger manually from GitHub website
+
+jobs:
+  build-ios:
+    name: Build iToWindows Unlock IPA
+    runs-on: macos-15   # free Mac runner on GitHub Actions
+
+    steps:
+
+      # ── 1. Checkout code ─────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Select Xcode version ───────────────────────────────────────────
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+
+      # ── 3. Import signing certificate ────────────────────────────────────
+      #    Certificate comes from GitHub secret SIGNING_CERTIFICATE (base64 .p12)
+      #    and SIGNING_CERTIFICATE_PASSWORD
+      - name: Import signing certificate
+        env:
+          CERTIFICATE_BASE64: ${{ secrets.SIGNING_CERTIFICATE }}
+          CERTIFICATE_PASSWORD: ${{ secrets.SIGNING_CERTIFICATE_PASSWORD }}
+        run: |
+          # Create a temporary keychain
+          KEYCHAIN_PATH=$RUNNER_TEMP/build.keychain
+          KEYCHAIN_PASSWORD=temppassword
+
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+
+          # Decode and import the certificate
+          echo "$CERTIFICATE_BASE64" | base64 --decode > $RUNNER_TEMP/cert.p12
+          security import "$RUNNER_TEMP/cert.p12" \
+            -P "$CERTIFICATE_PASSWORD" \
+            -A -t cert -f pkcs12 \
+            -k "$KEYCHAIN_PATH"
+
+          security list-keychain -d user -s "$KEYCHAIN_PATH"
+
+      # ── 4. Install provisioning profile ──────────────────────────────────
+      #    Profile comes from GitHub secret PROVISIONING_PROFILE (base64 .mobileprovision)
+      - name: Install provisioning profile
+        env:
+          PROVISIONING_PROFILE_BASE64: ${{ secrets.PROVISIONING_PROFILE }}
+        run: |
+          PROFILE_PATH="$HOME/Library/MobileDevice/Provisioning Profiles"
+          mkdir -p "$PROFILE_PATH"
+          echo "$PROVISIONING_PROFILE_BASE64" | base64 --decode \
+            > "$PROFILE_PATH/iToWindowsUnlock.mobileprovision"
+
+      # ── 5. Resolve Swift package dependencies ─────────────────────────────
+      - name: Resolve packages
+        working-directory: PCUnlockApp
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -project iToWindowsUnlock.xcodeproj \
+            -scheme iToWindowsUnlock
+
+      # ── 6. Build and archive ──────────────────────────────────────────────
+      - name: Archive
+        working-directory: PCUnlockApp
+        run: |
+          xcodebuild \
+            -project iToWindowsUnlock.xcodeproj \
+            -scheme iToWindowsUnlock \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath "$RUNNER_TEMP/iToWindowsUnlock.xcarchive" \
+            archive \
+            CODE_SIGN_STYLE=Manual \
+            PROVISIONING_PROFILE_SPECIFIER="iToWindowsUnlock" \
+            DEVELOPMENT_TEAM="${{ secrets.DEVELOPMENT_TEAM_ID }}"
+
+      # ── 7. Export .ipa ────────────────────────────────────────────────────
+      - name: Export IPA
+        run: |
+          cat > /tmp/ExportOptions.plist << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+            "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+              <key>method</key>
+              <string>development</string>
+              <key>teamID</key>
+              <string>${{ secrets.DEVELOPMENT_TEAM_ID }}</string>
+              <key>compileBitcode</key>
+              <false/>
+              <key>stripSwiftSymbols</key>
+              <true/>
+          </dict>
+          </plist>
+          EOF
+
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/iToWindowsUnlock.xcarchive" \
+            -exportPath "$RUNNER_TEMP/ipa" \
+            -exportOptionsPlist /tmp/ExportOptions.plist
+
+      # ── 8. Upload .ipa as downloadable artifact ───────────────────────────
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: iToWindowsUnlock-ipa
+          path: ${{ runner.temp }}/ipa/*.ipa
+          retention-days: 30   # download within 30 days
