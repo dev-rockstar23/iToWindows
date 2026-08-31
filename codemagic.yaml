@@ -26,7 +26,7 @@ workflows:
 
     environment:
       ios_signing:
-        distribution_type: ad_hoc        # ad_hoc = install on registered devices, no $99 needed
+        distribution_type: development   # works with free Apple ID, no $99 needed
         bundle_identifier: com.dev-rockstar23.itowindows-unlock
       vars:
         XCODE_PROJECT:  "PCUnlockApp/iToWindowsUnlock.xcodeproj"
@@ -85,7 +85,7 @@ workflows:
           <plist version="1.0">
           <dict>
               <key>method</key>
-              <string>ad-hoc</string>
+              <string>development</string>
               <key>compileBitcode</key>
               <false/>
               <key>stripSwiftSymbols</key>
