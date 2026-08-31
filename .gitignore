@@ -1,0 +1,58 @@
+# ── .NET / C# ──────────────────────────────────────────────────────────────
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.dbmdl
+*.jfm
+*.pfx
+*.snk
+project.lock.json
+artifacts/
+
+# ── Swift / Xcode ───────────────────────────────────────────────────────────
+.DS_Store
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+.build/
+Packages/
+Package.resolved
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ── Node / npm (if any tooling added later) ─────────────────────────────────
+node_modules/
+npm-debug.log*
+
+# ── OS files ────────────────────────────────────────────────────────────────
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
+
+# ── Secrets / credentials (never commit these) ──────────────────────────────
+*.p12
+*.mobileprovision
+*.keystore
+secrets.json
+appsettings.Development.json
+
+# ── Test results ────────────────────────────────────────────────────────────
+TestResults/
+*.trx
+*.coverage
+
+# ── Kiro IDE ────────────────────────────────────────────────────────────────
+.kiro/

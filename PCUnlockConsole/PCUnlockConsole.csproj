@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Feature: pc-unlock — Development Console (Requirements 12.1–12.5) -->
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>pcunlock</AssemblyName>
+    <RootNamespace>PCUnlockConsole</RootNamespace>
+    <Platforms>x64</Platforms>
+    <!-- Allow the executable to roll forward to newer .NET runtimes (e.g. net10) -->
+    <RollForward>Major</RollForward>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Windows Runtime support for Windows.Devices.Bluetooth (ble-sim commands) -->
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.1.3" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- App identity -->
+    <key>CFBundleName</key>
+    <string>iToWindows Unlock</string>
+
+    <key>CFBundleDisplayName</key>
+    <string>iToWindows Unlock</string>
+
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
+    <key>CFBundleVersion</key>
+    <string>$(CURRENT_PROJECT_VERSION)</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>$(MARKETING_VERSION)</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+
+    <!-- iOS deployment -->
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>arm64</string>
+    </array>
+
+    <!-- Supported orientations -->
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+    </array>
+
+    <!-- Camera permission — required for QR code scanning -->
+    <key>NSCameraUsageDescription</key>
+    <string>iToWindows Unlock uses your camera to scan the pairing QR code displayed on your PC.</string>
+
+    <!-- Face ID permission -->
+    <key>NSFaceIDUsageDescription</key>
+    <string>iToWindows Unlock uses Face ID to verify your identity before unlocking your PC.</string>
+
+    <!-- Bluetooth permission -->
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>iToWindows Unlock uses Bluetooth to communicate with your PC during unlock and pairing.</string>
+
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>iToWindows Unlock uses Bluetooth to communicate with your PC during unlock and pairing.</string>
+
+    <!-- Background Bluetooth for unlock advertising -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>bluetooth-peripheral</string>
+        <string>bluetooth-central</string>
+    </array>
+
+    <!-- Scene configuration -->
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UIApplicationSupportsMultipleScenes</key>
+        <false/>
+        <key>UISceneConfigurations</key>
+        <dict>
+            <key>UIWindowSceneSessionRoleApplication</key>
+            <array>
+                <dict>
+                    <key>UISceneConfigurationName</key>
+                    <string>Default Configuration</string>
+                    <key>UISceneDelegateClassName</key>
+                    <string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+                </dict>
+            </array>
+        </dict>
+    </dict>
+
+    <!-- App icon -->
+    <key>CFBundleIcons</key>
+    <dict>
+        <key>CFBundlePrimaryIcon</key>
+        <dict>
+            <key>CFBundleIconFiles</key>
+            <array>
+                <string>AppIcon</string>
+            </array>
+            <key>CFBundleIconName</key>
+            <string>AppIcon</string>
+        </dict>
+    </dict>
+</dict>
+</plist>
